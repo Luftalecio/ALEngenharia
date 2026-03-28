@@ -12,13 +12,12 @@ const PROJETOS = {
 
   regularizacao: [
     {
-      titulo: "Regularização Residencial - Bairro Novo",
+      titulo: "Projeto Casa Residencial",
       descricao: "Regularização de imóvel residencial junto à prefeitura, incluindo levantamento, aprovação e emissão de habite-se.",
       imagens: [
-        // "imagens/regularizacao/projeto-1/foto1.jpg",
-        // "imagens/regularizacao/projeto-1/foto2.jpg",
+        "imagens/regularizacao/Projeto casa.png",
       ],
-      video: "", // Cole aqui o link do YouTube ou Instagram (ex: https://www.youtube.com/watch?v=XXXXX)
+      video: "",
       ano: "2024",
       destaque: true
     },
@@ -27,10 +26,11 @@ const PROJETOS = {
 
   civilEletricoHidraulico: [
     {
-      titulo: "Projeto Residencial Completo - Curitiba",
+      titulo: "Projeto Fundação",
       descricao: "Projetos civil, elétrico e hidráulico de residência unifamiliar. Acompanhamento completo desde o lançamento até a execução.",
       imagens: [
-        // "imagens/projetos-civil-eletrico-hidraulico/projeto-1/foto1.jpg",
+        "imagens/projetos-civil-eletrico-hidraulico/Fundacao",
+        "imagens/projetos-civil-eletrico-hidraulico/Projeto Fundação",
       ],
       video: "",
       ano: "2024",
@@ -40,23 +40,23 @@ const PROJETOS = {
 
   estruturasMetalicas: [
     {
-      titulo: "Galpão Industrial - Estrutura Metálica",
-      descricao: "Projeto e execução de estrutura metálica para galpão industrial com 500m². Treliças, pilares e coberta em telha metálica.",
+      titulo: "Projeto e Execução — Ginásio",
+      descricao: "Projeto e execução de estrutura metálica para ginásio. Treliças, pilares e coberta em telha metálica.",
       imagens: [
-        // "imagens/estruturas-metalicas/projeto-1/foto1.jpg",
+        "imagens/estruturas-metalicas/Projeto e execução ginásio.png",
       ],
       video: "",
-      ano: "2023",
+      ano: "2024",
       destaque: true
     },
   ],
 
   gestaoObras: [
     {
-      titulo: "Reforma Comercial - Loja Centro",
-      descricao: "Gestão completa de reforma de espaço comercial de 200m². Controle de cronograma, equipes e materiais.",
+      titulo: "Reforma de Apartamento",
+      descricao: "Gestão completa de reforma de apartamento. Controle de cronograma, equipes e materiais.",
       imagens: [
-        // "imagens/gestao-obras/projeto-1/foto1.jpg",
+        "imagens/gestao-obras/Reforma Apto.png",
       ],
       video: "",
       ano: "2024",
