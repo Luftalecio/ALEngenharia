@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Alecio Luft Engenharia Civil — Projetos civis, elétricos, hidráulicos, estruturas metálicas e regularização junto à prefeitura. Navegantes, Itajaí e Vale do Itajaí." />
+  <title>Alecio Luft Engenharia Civil</title>
+  <link rel="stylesheet" href="css/estilo.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header>
+    <nav class="container">
+      <a href="#inicio" class="logo">
+        <span class="logo-nome">Alecio Luft</span>
+        <span class="logo-subtitulo">Engenharia Civil</span>
+      </a>
+      <button id="menu-toggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="nav-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="container hero-conteudo">
+      <span class="hero-tag">Engenharia Civil · Navegantes - SC</span>
+      <h1>
+        Projetos que <em>transformam</em><br />ideias em estrutura
+      </h1>
+      <p class="hero-desc">
+        Do projeto à regularização, da estrutura metálica à gestão da obra — 
+        atuamos em todas as etapas da construção com técnica e comprometimento.
+      </p>
+      <div class="hero-ctas">
+        <a href="#projetos" class="btn-primario">Ver projetos</a>
+        <a href="#contato" class="btn-secundario">Entrar em contato</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="secao sobre" id="sobre">
+    <div class="container">
+      <div class="sobre-grid">
+        <div>
+          <p class="secao-subtitulo">Quem somos</p>
+          <h2 class="secao-titulo">Engenharia com responsabilidade técnica</h2>
+          <div class="linha-acento"></div>
+          <p style="color: #6b6b65; margin-bottom: 1rem;">
+            A Alecio Luft Engenharia Civil atua no desenvolvimento de projetos e 
+            acompanhamento de obras residenciais, comerciais e industriais. 
+            Nossa equipe entrega soluções técnicas completas, da concepção ao habite-se.
+          </p>
+          <p style="color: #6b6b65;">
+            Trabalhamos com ética, prazos e qualidade — do menor projeto de regularização 
+            à estrutura metálica de maior porte. Atendemos Navegantes, Itajaí e toda a região do Vale do Itajaí.
+          </p>
+          <div class="sobre-badges">
+            <span class="badge">CREA</span>
+            <span class="badge">ART</span>
+            <span class="badge">Projetos residenciais</span>
+            <span class="badge">Projetos comerciais</span>
+            <span class="badge">Estruturas metálicas</span>
+          </div>
+        </div>
+        <div class="sobre-numeros">
+          <div class="numero-card">
+            <div class="numero">7+</div>
+            <div class="label">Anos de experiência</div>
+          </div>
+          <div class="numero-card">
+            <div class="numero">200+</div>
+            <div class="label">Projetos entregues</div>
+          </div>
+          <div class="numero-card">
+            <div class="numero">4</div>
+            <div class="label">Especialidades</div>
+          </div>
+          <div class="numero-card">
+            <div class="numero">100%</div>
+            <div class="label">Com responsabilidade técnica</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="secao servicos" id="servicos">
+    <div class="container">
+      <p class="secao-subtitulo" style="color: rgba(250,249,246,0.45);">O que fazemos</p>
+      <h2 class="secao-titulo">Nossas especialidades</h2>
+      <div class="linha-acento"></div>
+      <div class="servicos-grid">
+        <div class="servico-item">
+          <div class="servico-icone">🏛️</div>
+          <h3>Regularização junto à prefeitura</h3>
+          <p>Levantamento de construções existentes, aprovação de projetos e emissão de habite-se. Resolvemos a situação legal do seu imóvel.</p>
+        </div>
+        <div class="servico-item">
+          <div class="servico-icone">📐</div>
+          <h3>Projetos civil, elétrico e hidráulico</h3>
+          <p>Projetos completos para imóveis e prédios de pequeno porte. Civil, elétrico e hidráulico integrados e compatibilizados.</p>
+        </div>
+        <div class="servico-item">
+          <div class="servico-icone">⚙️</div>
+          <h3>Estruturas metálicas</h3>
+          <p>Projetos e execução de estruturas metálicas para galpões, coberturas, mezaninos e construções em geral.</p>
+        </div>
+        <div class="servico-item">
+          <div class="servico-icone">🔨</div>
+          <h3>Gestão de obras de reforma</h3>
+          <p>Gerenciamento completo de obras de reforma: orçamento, cronograma, coordenação de equipes e controle de qualidade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section class="secao projetos" id="projetos">
+    <div class="container">
+      <p class="secao-subtitulo">Cases</p>
+      <h2 class="secao-titulo">Projetos realizados</h2>
+      <div class="linha-acento"></div>
+
+      <!-- ABAS DE NAVEGAÇÃO -->
+      <div class="abas-nav" role="tablist">
+        <button class="aba-btn ativa" role="tab" onclick="trocarAba('regularizacao', this)">Regularização</button>
+        <button class="aba-btn" role="tab" onclick="trocarAba('civil', this)">Civil · Elétrico · Hidráulico</button>
+        <button class="aba-btn" role="tab" onclick="trocarAba('metalicas', this)">Estruturas Metálicas</button>
+        <button class="aba-btn" role="tab" onclick="trocarAba('obras', this)">Gestão de Obras</button>
+      </div>
+
+      <!-- PAINÉIS -->
+      <div id="aba-regularizacao" class="projeto-aba ativa">
+        <div class="projetos-grid" id="grid-regularizacao"></div>
+      </div>
+      <div id="aba-civil" class="projeto-aba">
+        <div class="projetos-grid" id="grid-civil"></div>
+      </div>
+      <div id="aba-metalicas" class="projeto-aba">
+        <div class="projetos-grid" id="grid-metalicas"></div>
+      </div>
+      <div id="aba-obras" class="projeto-aba">
+        <div class="projetos-grid" id="grid-obras"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="secao contato" id="contato">
+    <div class="container">
+      <div class="contato-grid">
+        <div>
+          <p class="secao-subtitulo">Fale conosco</p>
+          <h2 class="secao-titulo">Vamos conversar sobre o seu projeto</h2>
+          <div class="linha-acento"></div>
+          <p style="color: #6b6b65; margin-bottom: 1.5rem;">
+            Entre em contato para um orçamento sem compromisso. 
+            Atendemos em Navegantes, Itajaí e região do Vale do Itajaí.
+          </p>
+          <a href="#" id="whatsapp-link" target="_blank" rel="noopener" class="btn-whatsapp">
+            📱 Chamar no WhatsApp
+          </a>
+        </div>
+        <div>
+          <div class="contato-item">
+            <div class="contato-icone">📞</div>
+            <div>
+              <div class="contato-label">Telefone</div>
+              <div class="contato-valor" id="tel-display"></div>
+            </div>
+          </div>
+          <div class="contato-item">
+            <div class="contato-icone">✉️</div>
+            <div>
+              <div class="contato-label">E-mail</div>
+              <div class="contato-valor" id="email-display"></div>
+            </div>
+          </div>
+          <div class="contato-item">
+            <div class="contato-icone">📍</div>
+            <div>
+              <div class="contato-label">Localização</div>
+              <div class="contato-valor">Rua Fábio José da Silva, 25 — Navegantes, SC</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© <span id="ano-atual"></span> <span>Alecio Luft Engenharia Civil</span> · Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <!-- MODAL GALERIA -->
+  <div id="modal-galeria" role="dialog" aria-modal="true" aria-label="Galeria de fotos">
+    <button id="modal-fechar" aria-label="Fechar galeria">✕</button>
+    <div id="galeria-conteudo"></div>
+  </div>
+
+  <script>
+    document.getElementById('ano-atual').textContent = new Date().getFullYear();
+
+    function trocarAba(id, btn) {
+      document.querySelectorAll('.projeto-aba').forEach(p => p.classList.remove('ativa'));
+      document.querySelectorAll('.aba-btn').forEach(b => b.classList.remove('ativa'));
+      document.getElementById('aba-' + id).classList.add('ativa');
+      btn.classList.add('ativa');
+    }
+  </script>
+  <script src="js/projetos.js"></script>
+</body>
+</html>
