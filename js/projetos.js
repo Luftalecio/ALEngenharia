@@ -40,10 +40,21 @@ const PROJETOS = {
 
   estruturasMetalicas: [
     {
-      titulo: "Projeto e Execução — Ginásio",
-      descricao: "Projeto e execução de estrutura metálica para ginásio. Treliças, pilares e coberta em telha metálica.",
+      titulo: "Construção Quadra Coberta",
+      descricao: "Projeto e execução de estrutura metálica para cobertura de quadra esportiva. Treliças, pilares e coberta em telha metálica.",
       imagens: [
-        "imagens/estruturas-metalicas/Projeto e execução ginásio.png",
+        "imagens/estruturas-metalicas/Construção Quadra Coberta.jpeg",
+        "imagens/estruturas-metalicas/Construção Quadra Coberta (0).jpeg",
+        "imagens/estruturas-metalicas/Construção Quadra Coberta (1).jpeg",
+        "imagens/estruturas-metalicas/Construção Quadra Coberta (2).jpeg",
+        "imagens/estruturas-metalicas/Construção Quadra Coberta (3).jpeg",
+        "imagens/estruturas-metalicas/Construção Quadra Coberta (4).jpeg",
+        "imagens/estruturas-metalicas/Construção Quadra Coberta (5).jpeg",
+        "imagens/estruturas-metalicas/Construção Quadra Coberta (6).jpeg",
+        "imagens/estruturas-metalicas/Construção Quadra Coberta (7).jpeg",
+        "imagens/estruturas-metalicas/Construção Quadra Coberta (8).jpeg",
+        "imagens/estruturas-metalicas/Construção Quadra Coberta (9).jpeg",
+        "imagens/estruturas-metalicas/Construção Quadra Coberta (10).jpeg",
       ],
       video: "",
       ano: "2024",
