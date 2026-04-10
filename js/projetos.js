@@ -3,7 +3,7 @@ const PROJETOS = {
   regularizacao: [
     {
       titulo: "Projeto Casa Residencial",
-      descricao: "Regularização de imóvel residencial junto à prefeitura, incluindo levantamento, aprovação e emissão de habite-se.",
+      descricao: "Regularizacao de imovel residencial junto a prefeitura, incluindo levantamento, aprovacao e emissao de habite-se.",
       imagens: [
         "imagens/regularizacao/Projeto%20casa.png",
       ],
@@ -15,11 +15,10 @@ const PROJETOS = {
 
   civilEletricoHidraulico: [
     {
-      titulo: "Projeto Fundação",
-      descricao: "Projetos civil, elétrico e hidráulico de residência unifamiliar. Acompanhamento completo desde o lançamento até a execução.",
+      titulo: "Projeto Fundacao",
+      descricao: "Projetos civil, eletrico e hidraulico de residencia unifamiliar. Acompanhamento completo desde o lancamento ate a execucao.",
       imagens: [
         "imagens/projetos-civil-eletrico-hidraulico/Fundacao",
-        "imagens/projetos-civil-eletrico-hidraulico/Projeto%20Funda%C3%A7%C3%A3o",
       ],
       video: "",
       ano: "2024",
@@ -29,8 +28,8 @@ const PROJETOS = {
 
   estruturasMetalicas: [
     {
-      titulo: "Construção Quadra Coberta",
-      descricao: "Projeto e execução de estrutura metálica para cobertura de quadra esportiva. Treliças, pilares e coberta em telha metálica.",
+      titulo: "Construcao Quadra Coberta",
+      descricao: "Projeto e execucao de estrutura metalica para cobertura de quadra esportiva. Trelicas, pilares e coberta em telha metalica.",
       imagens: [
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-0.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-1.jpeg",
@@ -52,20 +51,20 @@ const PROJETOS = {
 
   gestaoObras: [
     {
-      titulo: "Reforma de Apartamento Alto Padrão",
-      descricao: "Gestão completa de reforma de apartamento alto padrão. Controle de cronograma, equipes e materiais.",
+      titulo: "Reforma de Apartamento Alto Padrao",
+      descricao: "Gestao completa de reforma de apartamento alto padrao. Controle de cronograma, equipes e materiais.",
       imagens: [
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra%CC%83o-1.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra%CC%83o-2.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra%CC%83o-3.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra%CC%83o-4.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra%CC%83o-5.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra%CC%83o-6.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra%CC%83o-7.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra%CC%83o-8.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra%CC%83o-9.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra%CC%83o-10.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra%CC%83o-11.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-1.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-2.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-3.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-4.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-5.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-6.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-7.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-8.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-9.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-10.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-11.jpeg",
       ],
       video: "",
       ano: "2024",
@@ -96,36 +95,32 @@ function criarCardProjeto(projeto) {
   const youtubeId = getYoutubeId(projeto.video);
   const instagramEmbed = getInstagramEmbed(projeto.video);
   let midiaHTML = '';
-
   if (youtubeId) {
-    midiaHTML = `<div class="midia-container"><iframe src="https://www.youtube.com/embed/${youtubeId}" frameborder="0" allowfullscreen loading="lazy" title="${projeto.titulo}"></iframe></div>`;
+    midiaHTML = '<div class="midia-container"><iframe src="https://www.youtube.com/embed/' + youtubeId + '" frameborder="0" allowfullscreen loading="lazy"></iframe></div>';
   } else if (instagramEmbed) {
-    midiaHTML = `<div class="midia-container midia-instagram"><iframe src="${instagramEmbed}" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe></div>`;
+    midiaHTML = '<div class="midia-container midia-instagram"><iframe src="' + instagramEmbed + '" frameborder="0" scrolling="no" loading="lazy"></iframe></div>';
   } else if (projeto.imagens.length > 0) {
     const imgPrincipal = projeto.imagens[0];
-    const maisImagens = projeto.imagens.length > 1 ? `<span class="badge-fotos">+${projeto.imagens.length - 1} fotos</span>` : '';
+    const maisImagens = projeto.imagens.length > 1 ? '<span class="badge-fotos">+' + (projeto.imagens.length - 1) + ' fotos</span>' : '';
     const dataImagens = encodeURIComponent(JSON.stringify(projeto.imagens));
-    midiaHTML = `<div class="midia-container midia-foto" data-imagens="${dataImagens}" onclick="abrirGaleria(this)"><img src="${imgPrincipal}" alt="${projeto.titulo}" loading="lazy" />${maisImagens}<div class="overlay-galeria">Ver galeria</div></div>`;
+    midiaHTML = '<div class="midia-container midia-foto" data-imagens="' + dataImagens + '" onclick="abrirGaleria(this)"><img src="' + imgPrincipal + '" alt="' + projeto.titulo + '" loading="lazy" />' + maisImagens + '<div class="overlay-galeria">Ver galeria</div></div>';
   } else {
-    midiaHTML = `<div class="midia-placeholder"><span>Em breve</span></div>`;
+    midiaHTML = '<div class="midia-placeholder"><span>Em breve</span></div>';
   }
-
-  return `<article class="card-projeto${projeto.destaque ? ' destaque' : ''}">${midiaHTML}<div class="card-info"><span class="card-ano">${projeto.ano}</span><h3>${projeto.titulo}</h3><p>${projeto.descricao}</p></div></article>`;
+  return '<article class="card-projeto' + (projeto.destaque ? ' destaque' : '') + '">' + midiaHTML + '<div class="card-info"><span class="card-ano">' + projeto.ano + '</span><h3>' + projeto.titulo + '</h3><p>' + projeto.descricao + '</p></div></article>';
 }
 
 function renderizarSecao(containerId, projetos) {
   const container = document.getElementById(containerId);
   if (!container) return;
-  container.innerHTML = projetos.length === 0
-    ? '<p class="sem-projetos">Projetos em breve.</p>'
-    : projetos.map(criarCardProjeto).join('');
+  container.innerHTML = projetos.length === 0 ? '<p class="sem-projetos">Projetos em breve.</p>' : projetos.map(criarCardProjeto).join('');
 }
 
 function abrirGaleria(el) {
   const imagens = JSON.parse(decodeURIComponent(el.dataset.imagens));
   const modal = document.getElementById('modal-galeria');
   const conteudo = document.getElementById('galeria-conteudo');
-  conteudo.innerHTML = imagens.map(src => `<img src="${src}" alt="Foto do projeto" />`).join('');
+  conteudo.innerHTML = imagens.map(function(src) { return '<img src="' + src + '" alt="Foto do projeto" />'; }).join('');
   modal.classList.add('ativo');
   document.body.style.overflow = 'hidden';
 }
@@ -135,175 +130,34 @@ function fecharGaleria() {
   document.body.style.overflow = '';
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
   renderizarSecao('grid-regularizacao', PROJETOS.regularizacao);
   renderizarSecao('grid-civil', PROJETOS.civilEletricoHidraulico);
   renderizarSecao('grid-metalicas', PROJETOS.estruturasMetalicas);
   renderizarSecao('grid-obras', PROJETOS.gestaoObras);
 
-  const waLink = document.getElementById('whatsapp-link');
-  if (waLink) waLink.href = `https://wa.me/${CONTATO.whatsapp}`;
-  const telEl = document.getElementById('tel-display');
+  var waLink = document.getElementById('whatsapp-link');
+  if (waLink) waLink.href = 'https://wa.me/' + CONTATO.whatsapp;
+  var telEl = document.getElementById('tel-display');
   if (telEl) telEl.textContent = CONTATO.telefone;
-  const emailEl = document.getElementById('email-display');
+  var emailEl = document.getElementById('email-display');
   if (emailEl) emailEl.textContent = CONTATO.email;
 
-  document.getElementById('modal-fechar')?.addEventListener('click', fecharGaleria);
-  document.getElementById('modal-galeria')?.addEventListener('click', (e) => {
-    if (e.target.id === 'modal-galeria') fecharGaleria();
-  });
+  var fecharBtn = document.getElementById('modal-fechar');
+  if (fecharBtn) fecharBtn.addEventListener('click', fecharGaleria);
+  var modalEl = document.getElementById('modal-galeria');
+  if (modalEl) modalEl.addEventListener('click', function(e) { if (e.target.id === 'modal-galeria') fecharGaleria(); });
 
-  const menuBtn = document.getElementById('menu-toggle');
-  const navLinks = document.getElementById('nav-links');
-  menuBtn?.addEventListener('click', () => navLinks.classList.toggle('aberto'));
+  var menuBtn = document.getElementById('menu-toggle');
+  var navLinks = document.getElementById('nav-links');
+  if (menuBtn) menuBtn.addEventListener('click', function() { navLinks.classList.toggle('aberto'); });
 
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', (e) => {
+  document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
       e.preventDefault();
-      navLinks?.classList.remove('aberto');
-      const target = document.querySelector(link.getAttribute('href'));
-      target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
-});  ],
-
-  estruturasMetalicas: [
-    {
-      titulo: "Construção Quadra Coberta",
-      descricao: "Projeto e execução de estrutura metálica para cobertura de quadra esportiva. Treliças, pilares e coberta em telha metálica.",
-      imagens: [
-        "imagens/estruturas-metalicas/Construcao Quadra Coberta-0.jpeg",
-        "imagens/estruturas-metalicas/Construcao Quadra Coberta-1.jpeg",
-        "imagens/estruturas-metalicas/Construcao Quadra Coberta-2.jpeg",
-        "imagens/estruturas-metalicas/Construcao Quadra Coberta-3.jpeg",
-        "imagens/estruturas-metalicas/Construcao Quadra Coberta-4.jpeg",
-        "imagens/estruturas-metalicas/Construcao Quadra Coberta-5.jpeg",
-        "imagens/estruturas-metalicas/Construcao Quadra Coberta-6.jpeg",
-        "imagens/estruturas-metalicas/Construcao Quadra Coberta-7.jpeg",
-        "imagens/estruturas-metalicas/Construcao Quadra Coberta-8.jpeg",
-        "imagens/estruturas-metalicas/Construcao Quadra Coberta-9.jpeg",
-        "imagens/estruturas-metalicas/Construcao Quadra Coberta-10.jpeg",
-      ],
-      video: "",
-      ano: "2024",
-      destaque: true
-    },
-  ],
-
-  gestaoObras: [
-    {
-      titulo: "Reforma de Apartamento Alto Padrão",
-      descricao: "Gestão completa de reforma de apartamento alto padrão. Controle de cronograma, equipes e materiais.",
-      imagens: [
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padr%C3%A3o.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padr%C3%A3o-1.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padr%C3%A3o-2.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padr%C3%A3o-3.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padr%C3%A3o-4.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padr%C3%A3o-5.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padr%C3%A3o-6.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padr%C3%A3o-7.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padr%C3%A3o-8.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padr%C3%A3o-9.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padr%C3%A3o-10.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padr%C3%A3o-11.jpeg",
-      ],
-      video: "",
-      ano: "2024",
-      destaque: true
-    },
-  ]
-};
-
-const CONTATO = {
-  whatsapp: "5547991205982",
-  telefone: "(47) 99120-5982",
-  email: "luft502@hotmail.com",
-  cidade: "Navegantes - SC"
-};
-
-function getYoutubeId(url) {
-  if (!url) return null;
-  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/);
-  return match ? match[1] : null;
-}
-
-function getInstagramEmbed(url) {
-  if (!url || !url.includes('instagram.com')) return null;
-  return url.replace(/\/?$/, '/embed');
-}
-
-function criarCardProjeto(projeto) {
-  const youtubeId = getYoutubeId(projeto.video);
-  const instagramEmbed = getInstagramEmbed(projeto.video);
-  let midiaHTML = '';
-
-  if (youtubeId) {
-    midiaHTML = `<div class="midia-container"><iframe src="https://www.youtube.com/embed/${youtubeId}" frameborder="0" allowfullscreen loading="lazy" title="${projeto.titulo}"></iframe></div>`;
-  } else if (instagramEmbed) {
-    midiaHTML = `<div class="midia-container midia-instagram"><iframe src="${instagramEmbed}" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe></div>`;
-  } else if (projeto.imagens.length > 0) {
-    const imgPrincipal = projeto.imagens[0];
-    const maisImagens = projeto.imagens.length > 1 ? `<span class="badge-fotos">+${projeto.imagens.length - 1} fotos</span>` : '';
-    const dataImagens = encodeURIComponent(JSON.stringify(projeto.imagens));
-    midiaHTML = `<div class="midia-container midia-foto" data-imagens="${dataImagens}" onclick="abrirGaleria(this)"><img src="${imgPrincipal}" alt="${projeto.titulo}" loading="lazy" />${maisImagens}<div class="overlay-galeria">Ver galeria</div></div>`;
-  } else {
-    midiaHTML = `<div class="midia-placeholder"><span>Em breve</span></div>`;
-  }
-
-  return `<article class="card-projeto${projeto.destaque ? ' destaque' : ''}">${midiaHTML}<div class="card-info"><span class="card-ano">${projeto.ano}</span><h3>${projeto.titulo}</h3><p>${projeto.descricao}</p></div></article>`;
-}
-
-function renderizarSecao(containerId, projetos) {
-  const container = document.getElementById(containerId);
-  if (!container) return;
-  container.innerHTML = projetos.length === 0
-    ? '<p class="sem-projetos">Projetos em breve.</p>'
-    : projetos.map(criarCardProjeto).join('');
-}
-
-function abrirGaleria(el) {
-  const imagens = JSON.parse(decodeURIComponent(el.dataset.imagens));
-  const modal = document.getElementById('modal-galeria');
-  const conteudo = document.getElementById('galeria-conteudo');
-  conteudo.innerHTML = imagens.map(src => `<img src="${src}" alt="Foto do projeto" />`).join('');
-  modal.classList.add('ativo');
-  document.body.style.overflow = 'hidden';
-}
-
-function fecharGaleria() {
-  document.getElementById('modal-galeria').classList.remove('ativo');
-  document.body.style.overflow = '';
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  renderizarSecao('grid-regularizacao', PROJETOS.regularizacao);
-  renderizarSecao('grid-civil', PROJETOS.civilEletricoHidraulico);
-  renderizarSecao('grid-metalicas', PROJETOS.estruturasMetalicas);
-  renderizarSecao('grid-obras', PROJETOS.gestaoObras);
-
-  const waLink = document.getElementById('whatsapp-link');
-  if (waLink) waLink.href = `https://wa.me/${CONTATO.whatsapp}`;
-  const telEl = document.getElementById('tel-display');
-  if (telEl) telEl.textContent = CONTATO.telefone;
-  const emailEl = document.getElementById('email-display');
-  if (emailEl) emailEl.textContent = CONTATO.email;
-
-  document.getElementById('modal-fechar')?.addEventListener('click', fecharGaleria);
-  document.getElementById('modal-galeria')?.addEventListener('click', (e) => {
-    if (e.target.id === 'modal-galeria') fecharGaleria();
-  });
-
-  const menuBtn = document.getElementById('menu-toggle');
-  const navLinks = document.getElementById('nav-links');
-  menuBtn?.addEventListener('click', () => navLinks.classList.toggle('aberto'));
-
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      navLinks?.classList.remove('aberto');
-      const target = document.querySelector(link.getAttribute('href'));
-      target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (navLinks) navLinks.classList.remove('aberto');
+      var target = document.querySelector(link.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 });
