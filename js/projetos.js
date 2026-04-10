@@ -43,18 +43,17 @@ const PROJETOS = {
       titulo: "Construção Quadra Coberta",
       descricao: "Projeto e execução de estrutura metálica para cobertura de quadra esportiva. Treliças, pilares e coberta em telha metálica.",
       imagens: [
-        "imagens/estruturas-metalicas/Construção Quadra Coberta.jpeg",
-        "imagens/estruturas-metalicas/Construção Quadra Coberta (0).jpeg",
-        "imagens/estruturas-metalicas/Construção Quadra Coberta (1).jpeg",
-        "imagens/estruturas-metalicas/Construção Quadra Coberta (2).jpeg",
-        "imagens/estruturas-metalicas/Construção Quadra Coberta (3).jpeg",
-        "imagens/estruturas-metalicas/Construção Quadra Coberta (4).jpeg",
-        "imagens/estruturas-metalicas/Construção Quadra Coberta (5).jpeg",
-        "imagens/estruturas-metalicas/Construção Quadra Coberta (6).jpeg",
-        "imagens/estruturas-metalicas/Construção Quadra Coberta (7).jpeg",
-        "imagens/estruturas-metalicas/Construção Quadra Coberta (8).jpeg",
-        "imagens/estruturas-metalicas/Construção Quadra Coberta (9).jpeg",
-        "imagens/estruturas-metalicas/Construção Quadra Coberta (10).jpeg",
+        "imagens/estruturas-metalicas/Constru%C3%A7%C3%A3o%20Quadra%20Coberta%20(0).jpeg",
+        "imagens/estruturas-metalicas/Constru%C3%A7%C3%A3o%20Quadra%20Coberta%20(1).jpeg",
+        "imagens/estruturas-metalicas/Constru%C3%A7%C3%A3o%20Quadra%20Coberta%20(2).jpeg",
+        "imagens/estruturas-metalicas/Constru%C3%A7%C3%A3o%20Quadra%20Coberta%20(3).jpeg",
+        "imagens/estruturas-metalicas/Constru%C3%A7%C3%A3o%20Quadra%20Coberta%20(4).jpeg",
+        "imagens/estruturas-metalicas/Constru%C3%A7%C3%A3o%20Quadra%20Coberta%20(5).jpeg",
+        "imagens/estruturas-metalicas/Constru%C3%A7%C3%A3o%20Quadra%20Coberta%20(6).jpeg",
+        "imagens/estruturas-metalicas/Constru%C3%A7%C3%A3o%20Quadra%20Coberta%20(7).jpeg",
+        "imagens/estruturas-metalicas/Constru%C3%A7%C3%A3o%20Quadra%20Coberta%20(8).jpeg",
+        "imagens/estruturas-metalicas/Constru%C3%A7%C3%A3o%20Quadra%20Coberta%20(9).jpeg",
+        "imagens/estruturas-metalicas/Constru%C3%A7%C3%A3o%20Quadra%20Coberta%20(10).jpeg",
       ],
       video: "",
       ano: "2024",
@@ -102,8 +101,7 @@ function getInstagramEmbed(url) {
   return url.replace(/\/?$/, '/embed');
 }
 
-function criarCardProjeto(projeto) {
-  const temMidia = projeto.imagens.length > 0 || projeto.video;
+function criarCardProjeto(projeto, idx) {
   const youtubeId = getYoutubeId(projeto.video);
   const instagramEmbed = getInstagramEmbed(projeto.video);
 
@@ -127,8 +125,9 @@ function criarCardProjeto(projeto) {
     const maisImagens = projeto.imagens.length > 1 
       ? `<span class="badge-fotos">+${projeto.imagens.length - 1} fotos</span>` 
       : '';
+    const dataImagens = encodeURIComponent(JSON.stringify(projeto.imagens));
     midiaHTML = `
-      <div class="midia-container midia-foto" onclick="abrirGaleria(${JSON.stringify(projeto.imagens)})">
+      <div class="midia-container midia-foto" data-imagens="${dataImagens}" onclick="abrirGaleria(this)">
         <img src="${imgPrincipal}" alt="${projeto.titulo}" loading="lazy" />
         ${maisImagens}
         <div class="overlay-galeria">Ver galeria</div>
@@ -161,7 +160,8 @@ function renderizarSecao(containerId, projetos) {
   container.innerHTML = projetos.map(criarCardProjeto).join('');
 }
 
-function abrirGaleria(imagens) {
+function abrirGaleria(el) {
+  const imagens = JSON.parse(decodeURIComponent(el.dataset.imagens));
   const modal = document.getElementById('modal-galeria');
   const conteudo = document.getElementById('galeria-conteudo');
   conteudo.innerHTML = imagens.map(src => `<img src="${src}" alt="Foto do projeto" />`).join('');
