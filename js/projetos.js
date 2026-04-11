@@ -23,7 +23,6 @@ const PROJETOS = {
       titulo: "Construcao Quadra Coberta",
       descricao: "Projeto e execucao de estrutura metalica para cobertura de quadra esportiva. Trelicas, pilares e coberta em telha metalica.",
       imagens: [
-        "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-7.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-0.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-1.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-2.jpeg",
@@ -31,6 +30,7 @@ const PROJETOS = {
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-4.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-5.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-6.jpeg",
+        "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-7.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-8.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-9.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-10.jpeg",
@@ -39,33 +39,33 @@ const PROJETOS = {
     },
   ],
 
-  ConstrucãoCentroEsterilizacaoHospitalar: [
+  centroHospitalar: [
     {
-      titulo: "Projeto Casa Residencial",
-      descricao: "Regularizacao de imovel residencial junto a prefeitura, incluindo levantamento, aprovacao e emissao de habite-se.",
+      titulo: "Construcao Centro de Esterilizacao Hospitalar",
+      descricao: "Projeto e execucao de centro de esterilizacao hospitalar. Estrutura completa com todos os requisitos tecnicos.",
       imagens: [
-        "ConstrucaoCentroEsterilizacaoHospitalar-0"
-        "ConstrucaoCentroEsterilizacaoHospitalar-1"
-        "ConstrucaoCentroEsterilizacaoHospitalar-2"
-        "ConstrucaoCentroEsterilizacaoHospitalar-3"
-        "ConstrucaoCentroEsterilizacaoHospitalar-4"
-        "ConstrucaoCentroEsterilizacaoHospitalar-5"
-        "ConstrucaoCentroEsterilizacaoHospitalar-6"
-        "ConstrucaoCentroEsterilizacaoHospitalar-7"
-        "ConstrucaoCentroEsterilizacaoHospitalar-8"
-        "ConstrucaoCentroEsterilizacaoHospitalar-9"
-        "ConstrucaoCentroEsterilizacaoHospitalar-10"
-        "ConstrucaoCentroEsterilizacaoHospitalar-11"
-        "ConstrucaoCentroEsterilizacaoHospitalar-12"
-        "ConstrucaoCentroEsterilizacaoHospitalar-13"
-        "ConstrucaoCentroEsterilizacaoHospitalar-14"
-        "ConstrucaoCentroEsterilizacaoHospitalar-15"
-        "ConstrucaoCentroEsterilizacaoHospitalar-16"
+        "imagens/ConstrucaoCentroEsterilizacaoHospitalar/ConstrucaoCentroEsterilizacaoHospitalar-0.jpeg",
+        "imagens/ConstrucaoCentroEsterilizacaoHospitalar/ConstrucaoCentroEsterilizacaoHospitalar-1.jpeg",
+        "imagens/ConstrucaoCentroEsterilizacaoHospitalar/ConstrucaoCentroEsterilizacaoHospitalar-2.jpeg",
+        "imagens/ConstrucaoCentroEsterilizacaoHospitalar/ConstrucaoCentroEsterilizacaoHospitalar-3.jpeg",
+        "imagens/ConstrucaoCentroEsterilizacaoHospitalar/ConstrucaoCentroEsterilizacaoHospitalar-4.jpeg",
+        "imagens/ConstrucaoCentroEsterilizacaoHospitalar/ConstrucaoCentroEsterilizacaoHospitalar-5.jpeg",
+        "imagens/ConstrucaoCentroEsterilizacaoHospitalar/ConstrucaoCentroEsterilizacaoHospitalar-6.jpeg",
+        "imagens/ConstrucaoCentroEsterilizacaoHospitalar/ConstrucaoCentroEsterilizacaoHospitalar-7.jpeg",
+        "imagens/ConstrucaoCentroEsterilizacaoHospitalar/ConstrucaoCentroEsterilizacaoHospitalar-8.jpeg",
+        "imagens/ConstrucaoCentroEsterilizacaoHospitalar/ConstrucaoCentroEsterilizacaoHospitalar-9.jpeg",
+        "imagens/ConstrucaoCentroEsterilizacaoHospitalar/ConstrucaoCentroEsterilizacaoHospitalar-10.jpeg",
+        "imagens/ConstrucaoCentroEsterilizacaoHospitalar/ConstrucaoCentroEsterilizacaoHospitalar-11.jpeg",
+        "imagens/ConstrucaoCentroEsterilizacaoHospitalar/ConstrucaoCentroEsterilizacaoHospitalar-12.jpeg",
+        "imagens/ConstrucaoCentroEsterilizacaoHospitalar/ConstrucaoCentroEsterilizacaoHospitalar-13.jpeg",
+        "imagens/ConstrucaoCentroEsterilizacaoHospitalar/ConstrucaoCentroEsterilizacaoHospitalar-14.jpeg",
+        "imagens/ConstrucaoCentroEsterilizacaoHospitalar/ConstrucaoCentroEsterilizacaoHospitalar-15.jpeg",
+        "imagens/ConstrucaoCentroEsterilizacaoHospitalar/ConstrucaoCentroEsterilizacaoHospitalar-16.jpeg",
       ],
       video: "", ano: "2024", destaque: true
     },
   ],
-  
+
   gestaoObras: [
     {
       titulo: "Reforma de Apartamento Alto Padrao",
@@ -96,7 +96,6 @@ const CONTATO = {
   cidade: "Navegantes - SC"
 };
 
-// ---- Lightbox state ----
 var _lbImagens = [];
 var _lbIndex = 0;
 
@@ -169,7 +168,6 @@ function fecharLightbox() {
   document.body.style.overflow = '';
 }
 
-// Manter compatibilidade com código antigo
 function abrirGaleria(el) { abrirLightbox(el, 0); }
 function fecharGaleria() { fecharLightbox(); }
 
@@ -177,6 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
   renderizarSecao('grid-regularizacao', PROJETOS.regularizacao);
   renderizarSecao('grid-civil', PROJETOS.civilEletricoHidraulico);
   renderizarSecao('grid-metalicas', PROJETOS.estruturasMetalicas);
+  renderizarSecao('grid-hospitalar', PROJETOS.centroHospitalar);
   renderizarSecao('grid-obras', PROJETOS.gestaoObras);
 
   var waLink = document.getElementById('whatsapp-link');
@@ -186,7 +185,6 @@ document.addEventListener('DOMContentLoaded', function() {
   var emailEl = document.getElementById('email-display');
   if (emailEl) emailEl.textContent = CONTATO.email;
 
-  // Lightbox eventos
   document.getElementById('lb-fechar').addEventListener('click', fecharLightbox);
   document.getElementById('lb-prev').addEventListener('click', function(e) { e.stopPropagation(); lbAnterior(); });
   document.getElementById('lb-next').addEventListener('click', function(e) { e.stopPropagation(); lbProximo(); });
@@ -194,7 +192,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (e.target === this || e.target.id === 'lb-img-wrap') fecharLightbox();
   });
 
-  // Teclado
   document.addEventListener('keydown', function(e) {
     if (!document.getElementById('lightbox').classList.contains('ativo')) return;
     if (e.key === 'ArrowLeft') lbAnterior();
@@ -202,7 +199,6 @@ document.addEventListener('DOMContentLoaded', function() {
     else if (e.key === 'Escape') fecharLightbox();
   });
 
-  // Swipe mobile
   var touchStartX = 0;
   document.getElementById('lightbox').addEventListener('touchstart', function(e) {
     touchStartX = e.touches[0].clientX;
@@ -212,7 +208,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (Math.abs(diff) > 50) { if (diff > 0) lbProximo(); else lbAnterior(); }
   }, {passive: true});
 
-  // Menu mobile
   var menuBtn = document.getElementById('menu-toggle');
   var navLinks = document.getElementById('nav-links');
   if (menuBtn) menuBtn.addEventListener('click', function() { navLinks.classList.toggle('aberto'); });
