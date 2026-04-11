@@ -4,12 +4,8 @@ const PROJETOS = {
     {
       titulo: "Projeto Casa Residencial",
       descricao: "Regularizacao de imovel residencial junto a prefeitura, incluindo levantamento, aprovacao e emissao de habite-se.",
-      imagens: [
-        "imagens/regularizacao/Projeto%20casa.png",
-      ],
-      video: "",
-      ano: "2024",
-      destaque: true
+      imagens: ["imagens/regularizacao/Projeto%20casa.png"],
+      video: "", ano: "2024", destaque: true
     },
   ],
 
@@ -17,12 +13,8 @@ const PROJETOS = {
     {
       titulo: "Projeto Fundacao",
       descricao: "Projetos civil, eletrico e hidraulico de residencia unifamiliar. Acompanhamento completo desde o lancamento ate a execucao.",
-      imagens: [
-        "imagens/projetos-civil-eletrico-hidraulico/Fundacao",
-      ],
-      video: "",
-      ano: "2024",
-      destaque: true
+      imagens: ["imagens/projetos-civil-eletrico-hidraulico/Fundacao"],
+      video: "", ano: "2024", destaque: true
     },
   ],
 
@@ -43,9 +35,7 @@ const PROJETOS = {
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-9.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-10.jpeg",
       ],
-      video: "",
-      ano: "2024",
-      destaque: true
+      video: "", ano: "2024", destaque: true
     },
   ],
 
@@ -54,21 +44,20 @@ const PROJETOS = {
       titulo: "Reforma de Apartamento Alto Padrao",
       descricao: "Gestao completa de reforma de apartamento alto padrao. Controle de cronograma, equipes e materiais.",
       imagens: [
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-1.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-2.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-3.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-4.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-5.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-6.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-7.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-8.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-9.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-10.jpeg",
-        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padrào-11.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20padra\u0300o-0.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra\u0300o-1.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra\u0300o-2.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra\u0300o-3.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra\u0300o-4.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra\u0300o-5.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra\u0300o-6.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra\u0300o-7.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra\u0300o-8.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra\u0300o-9.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra\u0300o-10.jpeg",
+        "imagens/gestao-obras/Reforma%20Apartamento%20Alto%20Padra\u0300o-11.jpeg",
       ],
-      video: "",
-      ano: "2024",
-      destaque: true
+      video: "", ano: "2024", destaque: true
     },
   ]
 };
@@ -80,9 +69,13 @@ const CONTATO = {
   cidade: "Navegantes - SC"
 };
 
+// ---- Lightbox state ----
+var _lbImagens = [];
+var _lbIndex = 0;
+
 function getYoutubeId(url) {
   if (!url) return null;
-  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/);
+  var match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/);
   return match ? match[1] : null;
 }
 
@@ -92,18 +85,18 @@ function getInstagramEmbed(url) {
 }
 
 function criarCardProjeto(projeto) {
-  const youtubeId = getYoutubeId(projeto.video);
-  const instagramEmbed = getInstagramEmbed(projeto.video);
-  let midiaHTML = '';
+  var youtubeId = getYoutubeId(projeto.video);
+  var instagramEmbed = getInstagramEmbed(projeto.video);
+  var midiaHTML = '';
   if (youtubeId) {
     midiaHTML = '<div class="midia-container"><iframe src="https://www.youtube.com/embed/' + youtubeId + '" frameborder="0" allowfullscreen loading="lazy"></iframe></div>';
   } else if (instagramEmbed) {
     midiaHTML = '<div class="midia-container midia-instagram"><iframe src="' + instagramEmbed + '" frameborder="0" scrolling="no" loading="lazy"></iframe></div>';
   } else if (projeto.imagens.length > 0) {
-    const imgPrincipal = projeto.imagens[0];
-    const maisImagens = projeto.imagens.length > 1 ? '<span class="badge-fotos">+' + (projeto.imagens.length - 1) + ' fotos</span>' : '';
-    const dataImagens = encodeURIComponent(JSON.stringify(projeto.imagens));
-    midiaHTML = '<div class="midia-container midia-foto" data-imagens="' + dataImagens + '" onclick="abrirGaleria(this)"><img src="' + imgPrincipal + '" alt="' + projeto.titulo + '" loading="lazy" />' + maisImagens + '<div class="overlay-galeria">Ver galeria</div></div>';
+    var imgPrincipal = projeto.imagens[0];
+    var maisImagens = projeto.imagens.length > 1 ? '<span class="badge-fotos">+' + (projeto.imagens.length - 1) + ' fotos</span>' : '';
+    var dataImagens = encodeURIComponent(JSON.stringify(projeto.imagens));
+    midiaHTML = '<div class="midia-container midia-foto" data-imagens="' + dataImagens + '" onclick="abrirLightbox(this, 0)"><img src="' + imgPrincipal + '" alt="' + projeto.titulo + '" loading="lazy" />' + maisImagens + '<div class="overlay-galeria">Ver fotos</div></div>';
   } else {
     midiaHTML = '<div class="midia-placeholder"><span>Em breve</span></div>';
   }
@@ -111,24 +104,47 @@ function criarCardProjeto(projeto) {
 }
 
 function renderizarSecao(containerId, projetos) {
-  const container = document.getElementById(containerId);
+  var container = document.getElementById(containerId);
   if (!container) return;
   container.innerHTML = projetos.length === 0 ? '<p class="sem-projetos">Projetos em breve.</p>' : projetos.map(criarCardProjeto).join('');
 }
 
-function abrirGaleria(el) {
-  const imagens = JSON.parse(decodeURIComponent(el.dataset.imagens));
-  const modal = document.getElementById('modal-galeria');
-  const conteudo = document.getElementById('galeria-conteudo');
-  conteudo.innerHTML = imagens.map(function(src) { return '<img src="' + src + '" alt="Foto do projeto" />'; }).join('');
-  modal.classList.add('ativo');
+function abrirLightbox(el, startIndex) {
+  _lbImagens = JSON.parse(decodeURIComponent(el.dataset.imagens));
+  _lbIndex = startIndex || 0;
+  renderLightbox();
+  var lb = document.getElementById('lightbox');
+  lb.classList.add('ativo');
   document.body.style.overflow = 'hidden';
 }
 
-function fecharGaleria() {
-  document.getElementById('modal-galeria').classList.remove('ativo');
+function renderLightbox() {
+  var img = document.getElementById('lb-img');
+  var counter = document.getElementById('lb-counter');
+  img.src = _lbImagens[_lbIndex];
+  counter.textContent = (_lbIndex + 1) + ' / ' + _lbImagens.length;
+  document.getElementById('lb-prev').style.display = _lbImagens.length > 1 ? 'flex' : 'none';
+  document.getElementById('lb-next').style.display = _lbImagens.length > 1 ? 'flex' : 'none';
+}
+
+function lbAnterior() {
+  _lbIndex = (_lbIndex - 1 + _lbImagens.length) % _lbImagens.length;
+  renderLightbox();
+}
+
+function lbProximo() {
+  _lbIndex = (_lbIndex + 1) % _lbImagens.length;
+  renderLightbox();
+}
+
+function fecharLightbox() {
+  document.getElementById('lightbox').classList.remove('ativo');
   document.body.style.overflow = '';
 }
+
+// Manter compatibilidade com código antigo
+function abrirGaleria(el) { abrirLightbox(el, 0); }
+function fecharGaleria() { fecharLightbox(); }
 
 document.addEventListener('DOMContentLoaded', function() {
   renderizarSecao('grid-regularizacao', PROJETOS.regularizacao);
@@ -143,11 +159,33 @@ document.addEventListener('DOMContentLoaded', function() {
   var emailEl = document.getElementById('email-display');
   if (emailEl) emailEl.textContent = CONTATO.email;
 
-  var fecharBtn = document.getElementById('modal-fechar');
-  if (fecharBtn) fecharBtn.addEventListener('click', fecharGaleria);
-  var modalEl = document.getElementById('modal-galeria');
-  if (modalEl) modalEl.addEventListener('click', function(e) { if (e.target.id === 'modal-galeria') fecharGaleria(); });
+  // Lightbox eventos
+  document.getElementById('lb-fechar').addEventListener('click', fecharLightbox);
+  document.getElementById('lb-prev').addEventListener('click', function(e) { e.stopPropagation(); lbAnterior(); });
+  document.getElementById('lb-next').addEventListener('click', function(e) { e.stopPropagation(); lbProximo(); });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this || e.target.id === 'lb-img-wrap') fecharLightbox();
+  });
 
+  // Teclado
+  document.addEventListener('keydown', function(e) {
+    if (!document.getElementById('lightbox').classList.contains('ativo')) return;
+    if (e.key === 'ArrowLeft') lbAnterior();
+    else if (e.key === 'ArrowRight') lbProximo();
+    else if (e.key === 'Escape') fecharLightbox();
+  });
+
+  // Swipe mobile
+  var touchStartX = 0;
+  document.getElementById('lightbox').addEventListener('touchstart', function(e) {
+    touchStartX = e.touches[0].clientX;
+  }, {passive: true});
+  document.getElementById('lightbox').addEventListener('touchend', function(e) {
+    var diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) { if (diff > 0) lbProximo(); else lbAnterior(); }
+  }, {passive: true});
+
+  // Menu mobile
   var menuBtn = document.getElementById('menu-toggle');
   var navLinks = document.getElementById('nav-links');
   if (menuBtn) menuBtn.addEventListener('click', function() { navLinks.classList.toggle('aberto'); });
