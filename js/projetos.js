@@ -23,6 +23,7 @@ const PROJETOS = {
       titulo: "Construcao Quadra Coberta",
       descricao: "Projeto e execucao de estrutura metalica para cobertura de quadra esportiva. Trelicas, pilares e coberta em telha metalica.",
       imagens: [
+        "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-7.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-0.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-1.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-2.jpeg",
@@ -30,7 +31,6 @@ const PROJETOS = {
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-4.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-5.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-6.jpeg",
-        "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-7.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-8.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-9.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-10.jpeg",
@@ -42,7 +42,7 @@ const PROJETOS = {
   centroHospitalar: [
     {
       titulo: "Construcao Centro de Esterilizacao Hospitalar",
-      descricao: "Projeto e execucao de centro de esterilizacao hospitalar. Estrutura completa com todos os requisitos tecnicos.",
+      descricao: "Projeto e execucao de centro de esterilizacao hospitalar. Estrutura completa com todos os requisitos técnicos.",
       imagens: [
         "imagens/Construcao-Centro-Esterilizacao-Hospitalar2/ConstrucaoCentroEsterilizacaoHospitalar-0.jpeg",
         "imagens/Construcao-Centro-Esterilizacao-Hospitalar2/ConstrucaoCentroEsterilizacaoHospitalar-1.jpeg",
