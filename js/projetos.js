@@ -39,7 +39,7 @@ const PROJETOS = {
     },
   ],
 
-  Construcão Centro de Esterilizacao Hospitalar: [
+  ConstrucãoCentroEsterilizacaoHospitalar: [
     {
       titulo: "Projeto Casa Residencial",
       descricao: "Regularizacao de imovel residencial junto a prefeitura, incluindo levantamento, aprovacao e emissao de habite-se.",
