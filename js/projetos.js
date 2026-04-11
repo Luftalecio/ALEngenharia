@@ -23,6 +23,7 @@ const PROJETOS = {
       titulo: "Construcao Quadra Coberta",
       descricao: "Projeto e execucao de estrutura metalica para cobertura de quadra esportiva. Trelicas, pilares e coberta em telha metalica.",
       imagens: [
+        "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-7.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-0.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-1.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-2.jpeg",
@@ -30,7 +31,6 @@ const PROJETOS = {
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-4.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-5.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-6.jpeg",
-        "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-7.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-8.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-9.jpeg",
         "imagens/estruturas-metalicas/Construcao%20Quadra%20Coberta-10.jpeg",
@@ -39,6 +39,33 @@ const PROJETOS = {
     },
   ],
 
+  Construcão Centro de Esterilizacao Hospitalar: [
+    {
+      titulo: "Projeto Casa Residencial",
+      descricao: "Regularizacao de imovel residencial junto a prefeitura, incluindo levantamento, aprovacao e emissao de habite-se.",
+      imagens: [
+        "ConstrucaoCentroEsterilizacaoHospitalar-0"
+        "ConstrucaoCentroEsterilizacaoHospitalar-1"
+        "ConstrucaoCentroEsterilizacaoHospitalar-2"
+        "ConstrucaoCentroEsterilizacaoHospitalar-3"
+        "ConstrucaoCentroEsterilizacaoHospitalar-4"
+        "ConstrucaoCentroEsterilizacaoHospitalar-5"
+        "ConstrucaoCentroEsterilizacaoHospitalar-6"
+        "ConstrucaoCentroEsterilizacaoHospitalar-7"
+        "ConstrucaoCentroEsterilizacaoHospitalar-8"
+        "ConstrucaoCentroEsterilizacaoHospitalar-9"
+        "ConstrucaoCentroEsterilizacaoHospitalar-10"
+        "ConstrucaoCentroEsterilizacaoHospitalar-11"
+        "ConstrucaoCentroEsterilizacaoHospitalar-12"
+        "ConstrucaoCentroEsterilizacaoHospitalar-13"
+        "ConstrucaoCentroEsterilizacaoHospitalar-14"
+        "ConstrucaoCentroEsterilizacaoHospitalar-15"
+        "ConstrucaoCentroEsterilizacaoHospitalar-16"
+      ],
+      video: "", ano: "2024", destaque: true
+    },
+  ],
+  
   gestaoObras: [
     {
       titulo: "Reforma de Apartamento Alto Padrao",
